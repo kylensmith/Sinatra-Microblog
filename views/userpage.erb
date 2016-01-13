@@ -1,0 +1,64 @@
+ <!-- Kyle N. Smith, in partnership with Seth Lieberman -->
+ 
+<!-- This page displays the information for the user that is logged in to the session.  It is their home feed and personal terminal. -->
+
+
+<div class="body-wrap">
+    <h1><%= current_user.name %></h1>
+    <div>I'm from: <%= current_user.city %></div>
+    <div>About <%= current_user.name %>: <%= current_user.profile.bio if !current_user.profile.bio.nil? %>
+    </div>
+
+
+
+
+    <!-- Form posts the name values (the blog post) via the userpage action -->
+    <form method="POST" action="/userpage" class = "userpage">
+        <input type = "textarea" id="post-box" name = "content" placeholder = "Share your thoughts here...">
+        <br> 
+        <button input type = "submit">Post Microblog</button>
+    </form>
+
+    <br>
+
+    <!-- Will reverse the loop and then limit the loop to ten interations so that only the ten most recently posted blogs will be rendered. -->
+    <% @post.last(10).reverse.each do |w|%>
+        <div class="blog-posts"> 
+            <p class="blog-text"><%= w.content%>
+            </p>
+            <a href="/user_<%=w.user.id%>"><%=w.user.name%></a>
+
+            <!-- Takes the created_at time and reformats to a more user friendly display. -->
+            <p class="time"><%= w.created_at.strftime("%m-%d-%Y %H:%M") %></p>
+            
+            <!-- This function checks if the post in the iteration was posted by the user logged in to the session.  If so, the logged in user has the ability to destroy the post.  This allows only the user that posted to be able to destroy. -->
+            <% if  w.user == current_user %>
+            <a href=<%="/delete_#{w.id}"%> class="time">Delete</a>
+            <%end%>
+
+        </div>
+    <% end%>
+
+    <!-- Breaks inserted for expediency during the build process.  Would be formatted via styling with a more complete build. -->
+    <br><br><br><br><br><br>
+</div>
+
+
+
+
+<div class="follower-wrap"> 
+    <h2>Following:
+
+        <!-- Loop displays all of the users that have been followed the user that is logged in to the session.  It also displays the total posts by those that they are following as well as the option to delete them from your followers list.  Think of this as an easy access toolbar for accessing the accounts you're most interested in visiting often. -->
+
+        <% @current_user.user_friends.each do |f|%>
+
+        <p class="followers"><a href="/user_<%= f.id%>"><%= f.name%></a> (<%= f.posts.count%>)<a href=<%="/d_follow#{f.id}"%> class="time">Delete</a></p>
+
+        <% end%>
+    </div>
+
+
+
+
+

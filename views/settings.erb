@@ -1,0 +1,41 @@
+ <!-- Kyle N. Smith, in partnership with Seth Lieberman -->
+<h1>Settings</h1>
+
+<!-- Form posts the name values via the settings function upon submit. -->
+<form method="POST" action="/settings" class = "userpage">
+
+	<div>
+
+		<textarea rows="3" cols="20" wrap="hard" name="bio" placeholder="Tell Us Something About Youself" class ="bio"></textarea>
+
+	</div>
+
+	<br>
+	<!-- No picture gems installed.  This will only capture text.  Users would only be able to post html routes that are hosted elsewhere, should they want them to be able to be rendered at some point. -->
+	<input type = "text" name = "picture" placeholder = "Picture">
+	<br>
+	<br>
+
+	Display Preferences (how other people see your page):
+
+	
+	<!-- This info will be stored to be applied to user session css in an effort to create unique styling for the user accounts-->
+
+	<select name = "bg_color">
+		<option value="#f7f7f7">White Background</option>
+		<option value="#ffc3a0">Peach Background</option>
+		<option value="#c8c8c8">Gray Background</option>
+		<option value="#effe81">Yellow Background</option>
+	</select>
+	<br>
+	<select name = "text_color">
+		<option value="#333333">Black Font</option>
+		<option value="#afc94c">Green Font</option>
+		<option value="#376280">Blue Font</option>
+		<option value="#e50000">Red Font</option>
+	</select>
+	<br>
+	<button input type = "submit">Save</button>
+
+
+</form>

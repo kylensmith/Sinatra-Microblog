@@ -1,0 +1,43 @@
+ <!-- Kyle N. Smith, in partnership with Seth Lieberman -->
+ 
+<head>
+	<style>
+	/*This styling was provided to allow the user to be able to set their prefered display options for how other users see their account.  This data is captured in their user settings.  It was done to figure out how formatting data may be captured and rendered.  Understood it is not a best practice and would not be utilized in a more complete build.*/
+	body {
+		background-color: <%= @background %>;
+		color: <%= @usertext %>;
+	}
+
+	</style>
+</head>
+
+
+
+<h1><%= @user.name %></h1>
+
+<div class ="profile">
+	<div>I'm from: <%= @user.city %></div>
+	<div>About <%= @user.name %>: <%= @user.profile.bio if !@user.profile.bio.nil? %></div>
+
+	<!-- This link goes to a function that allows the current session user to be able to follow the user of the profile page being displayed.  This adds the followed user to the current session user's follow list. -->
+	<a href=<%="/follow_#{@user.id}"%>>Follow <%= @user.name %></a>
+
+	<br>
+
+	<!-- A loop to list all of the user's posts.  Will list in reverse order.  If the site were to be utilized it would have to include other methods to limit the number of posts rendered on initial load in order to expedite the load and create a better user experience. -->
+	<% @post.reverse.each do |w|%> 
+		<div class="blog-posts"> 
+			<p class="blog-text"><%= w.content%></p>
+
+			<a href="/user_<%=w.user.id%>"><%=w.user.name%></a>
+
+			<!-- Takes the created_at time and reformats to a more user friendly display. -->
+	        <p class="time"><%= w.created_at.strftime("%m-%d-%Y %H:%M") %></p>
+
+			<br>
+			<br>
+		</div>
+	<% end%>
+
+
+

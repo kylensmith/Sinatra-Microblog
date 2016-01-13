@@ -1,0 +1,165 @@
+/*Kyle N. Smith, in partnership with Seth Lieberman*/
+
+
+body{
+    text-align: center;
+    font-family: fantasy;
+}
+
+ul{
+    list-style: none;
+    text-align: right;
+}
+
+li{
+    display: inline;
+    padding: 15px;
+}
+
+.header{ width: 100%;
+    display: inline;
+}
+
+.time {
+    display: inline-block;
+    padding: 2px;
+    font-size: 9px;
+    margin: 0px, 7px, 0px, 7px;
+    text-decoration: none;
+}
+
+.header-name {
+    text-align: left;
+    position: absolute;
+}
+
+
+.profile{
+    display: block;
+    text-align: center;
+    width: 650px;
+    font-size: 13px;
+    margin: 5px auto;
+    padding: 10px;
+}
+
+
+.blog-posts{
+    width: 350px;
+    border-style: solid;
+    border-width: 2px;
+    text-align: center;
+    margin: auto;
+    margin-bottom: 3px;
+    padding: 3px;
+}
+
+.blog-text {
+    font-size: 25px;
+}
+
+.profile{
+    display: block;
+}
+
+.body-wrap {
+    width: 500px;
+    float: left;
+    
+}
+
+.followers {
+    font-size: 16px
+}
+
+.follower-wrap {
+    width: 300px;
+    float: right;
+    position: inline-block;
+    text-align: left;
+    margin-right: 15px;
+    z-index: 2;
+}
+
+#bio-box {
+    color: #4c767e ; 
+    border-width: 2px; 
+    border-style: ridge; 
+    border-color: #888888 ; 
+    height: 90px; 
+    width: 350px; 
+    margin: 10px;
+}
+
+#post-box {
+    color: #4c767e ; 
+    border-width: 2px; 
+    border-style: ridge; 
+    border-color: #888888 ; 
+    height: 90px; 
+    width: 350px; 
+    margin: 10px;
+    font-size: 15px;
+    border: solid #bbd1d2  2px;
+    width: 400px;
+    margin: 0 auto;
+}
+
+input{
+    font-size: 15px;
+    display: block;
+    text-align: center;
+    padding: 10px;
+    border:solid black 2px;
+    margin: 0 auto;    
+    margin-top: 20px;
+}
+.bio{
+    width: 300px;
+    height: 100px;
+    text-align: center;
+    font-size: 15px;
+    border: solid black 2px;
+
+}
+
+
+/*NAV FORMATTING*/
+
+.menu {
+    height: 35px;
+}
+
+.menu a:link, a:visited, a:active {
+    color: black;
+    text-decoration: none;
+}
+
+
+.menu a:hover {
+    color: #999;
+}
+
+
+.menu li {
+
+    float: right;
+    display: block;
+    padding: 0px 12px;
+    margin: auto;
+    font-size: 22px;
+    color: black;
+    text-align: center;
+    overflow: hidden;
+}
+
+.menu h1 {
+    float: left;
+    color: black;
+    display: block;
+    text-align: center;
+    overflow: hidden;
+    margin: 0;
+    margin-right: 20px;
+    font: 15px;
+}

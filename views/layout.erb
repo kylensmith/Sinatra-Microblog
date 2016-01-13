@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+ <!-- Kyle N. Smith, in partnership with Seth Lieberman -->
+<html>
+	<head>
+		<title>Blog Away</title>
+		<link rel="stylesheet" type="text/css" href="styles.css">
+		<!-- // <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script> -->
+		<!-- // <script src=".js"></script> -->
+		<meta charset="UTF-8">
+	</head>
+	<body>
+		
+	<!-- Navigation menu -->
+	<nav>
+		<div class="menu">
+			<ul>
+				<li><a href="/sign-out">Sign Out</a></li>
+				<li><a href="/settings">Settings</a></li>
+				<li><a href="/userpage">Home</a></li>
+			</ul>
+				<h1>Blog Away</h1>
+		</div>
+	</nav>
+
+<!-- Div created to just provide spacing for expediency...styling would be performed with a more complete build to reach this solution. -->
+<div height: "25px"></div>
+		
+		<!-- Content rendered via other views -->
+		<%= yield %>
+
+	</body>
+</html>
